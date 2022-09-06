@@ -1,27 +1,3 @@
-#  MIT License
-#
-#  Copyright (c) 2019-present Dan <https://github.com/delivrance>
-#
-#  Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
-#
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
-#
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE
-
-
-
 import requests
 import json
 import subprocess
@@ -35,7 +11,6 @@ import pyrogram
 from pyrogram import Client, filters
 import tgcrypto
 from p_bar import progress_bar
-
 from subprocess import getstatusoutput
 import helper
 import logging
@@ -52,18 +27,14 @@ import cloudscraper
 from dotenv import load_dotenv
 load_dotenv()
 os.makedirs("./downloads", exist_ok=True)
-#API_ID = 14560088
-#API_HASH = "74a2665339484da3eaaed5f4fe16da79"
-#BOT_TOKEN = "5524381543:AAH-s7TDhvA_Ng2k9U5z9pvgiRPy5ChNve8"
-#NAME = "BlackOuT"
-#API_ID = os.getenv('API_ID')
-#API_HASH = os.getenv('API_HASH')
-#BOT_TOKEN = os.getenv('BOT_TOKEN')
+API_ID = 14560088
+API_HASH = "74a2665339484da3eaaed5f4fe16da79"
+BOT_TOKEN = "5524381543:AAH-s7TDhvA_Ng2k9U5z9pvgiRPy5ChNve8"
 bot = Client(
     "bot",
-    bot_token=os.environ.get("BOT_TOKEN"),
-    api_id=int(os.environ.get("API_ID")),
-    api_hash=os.environ.get("API_HASH")
+    bot_token=BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
 )
 
 @bot.on_message(filters.command(["start"])& ~filters.edited)
@@ -219,16 +190,6 @@ async def upload(bot: Client, m: Message):
         await m.reply_text(e)
         
          
-    
-# @bot.on_message(filters.command(["link"])& ~filters.edited)
-# async def account_login(bot: Client, m: Message):
-#     editable = await m.reply_text('Send **Name&link** to download')
-
-#     input: Message = await bot.listen(editable.chat.id)
-#     raw_file = input.text
-
-#     name = raw_file.split('&')[0]
-#     url = raw_file.split('&')[1]
 
 @bot.on_message(filters.command(["pyro"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
