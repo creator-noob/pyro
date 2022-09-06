@@ -458,7 +458,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_vision"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello Bruh **I am vision ias Downloader Bot**. )
+    editable = await m.reply_text("Hello Bruh **I am vision ias Downloader Bot**. ")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -536,7 +536,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["adda_pdf"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello Bruh **I am adda pdf Downloader Bot**. )
+    editable = await m.reply_text("Hello Bruh **I am adda pdf Downloader Bot**." )
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -611,7 +611,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_olive"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello Bruh **I am Oliveboard Downloader Bot**.)
+    editable = await m.reply_text("Hello Bruh **I am Oliveboard Downloader Bot**.")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -690,7 +690,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_jw"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello Bruh **I am jw Downloader Bot**. )
+    editable = await m.reply_text("Hello Bruh **I am jw Downloader Bot**. ")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -864,7 +864,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["top"]))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Hello Bruh **I am top Downloader Bot**.)
+    editable = await m.reply_text("Hello Bruh **I am top Downloader Bot**.")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
