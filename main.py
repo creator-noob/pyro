@@ -1,4 +1,3 @@
-from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 import requests
 import json
 import subprocess
@@ -27,42 +26,16 @@ from pyrogram.types import User, Message
 import re
 import os
 import io
-#import pycurl
 
-# bot = Client(
-#     "bot",
-#     api_id=api_id,
-#     api_hash=api_hash,
-#     bot_token=bot_token)
-
-
-
-
-bot = Client("bot",
-             bot_token=os.environ.get("BOT_TOKEN"),
-             api_id=int(os.environ.get("API_ID")),
-             api_hash=os.environ.get("API_HASH"))
-auth_users = [
-    int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
-sudo_users = auth_users
-sudo_groups = [
-    int(chat) for chat in os.environ.get("GROUPS").split(",") if chat != '']
-
-keyboard = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(
-                text="Devloper",
-                url="https://pornhub.com/",
-            ),
-            InlineKeyboardButton(
-                text="Repo",
-                url="https://lund-chushLoo.com/repo",
-            ),
-        ],
-    ]
+API_ID = 14560088
+API_HASH = "74a2665339484da3eaaed5f4fe16da79"
+BOT_TOKEN = "5027731817:AAEdVdwm2ljYDaGqDJc8iOv-iWkwqerrTGs"
+bot = Client(
+    "bot",
+    bot_token=BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
 )
-
 
 @bot.on_message(filters.command(["pyro"]))
 async def account_login(bot: Client, m: Message):
@@ -87,16 +60,11 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["pro_txt"]))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("**bhag bhosadi ke", quote=True)
-        return
-    else:
-        editable = await m.reply_text(
-            "Hello Bruh **I am Text Downloader Bot**. I can download videos from **text** file one by one.**\n\nDeveloper** : NAAM TO SUNA HOGA**\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}")
+    editable = await m.reply_text('Send TXT in **NAME : LINK** format to download')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
+
 
     path = f"./downloads/{m.chat.id}"
 
@@ -412,12 +380,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_top"]))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("**Nikal Lowde**", quote=True)
-        return
-    else:
-        editable = await m.reply_text(
+    editable = await m.reply_text(
             "Hello Bruh **I am ankul60 Downloader Bot**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
@@ -495,12 +458,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_vision"]))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("bhag bhosadi ke", quote=True)
-        return
-    else:
-        editable = await m.reply_text(
+     editable = await m.reply_text(
             "Hello Bruh **I am vision ias Downloader Bot**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
@@ -580,12 +538,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["adda_pdf"]))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("**bhag bhosadi ke**", quote=True)
-        return
-    else:
-        editable = await m.reply_text(
+    editable = await m.reply_text(
             "Hello Bruh **I am adda pdf Downloader Bot**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** :Pyrogram\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
@@ -662,12 +615,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["pro_olive"]))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("bhag bhosadi ke", quote=True)
-        return
-    else:
-        editable = await m.reply_text(
+    editable = await m.reply_text(
             "Hello Bruh **I am Oliveboard Downloader Bot**. I can download videos from **text** file one by one.**\n\nLanguage** : Python**\nFramework** : Pyrogram\n\nSend **TXT** File {Name : Link}"
        ,reply_markup=keyboard)
     input: Message = await bot.listen(editable.chat.id)
